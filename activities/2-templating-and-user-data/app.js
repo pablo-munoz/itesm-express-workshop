@@ -84,8 +84,9 @@ app.get('/', (request, response) => {
   // TODO: Make it so that if a 'filter' key is present in the request.query
   // object and if its value is equal to the string 'pending', then the
   // todos we send, responseTodos, are only those with a status equal to
-  // 'pending'
-  const responseTodos = todos;
+  // 'pending'. You might want to use the todos.filter, i.e. the filter
+  // method of the todos array.
+  let responseTodos = todos;
 
   const context = {
     applicationName: 'TODO application',
@@ -127,10 +128,10 @@ app.post('/edit', (request, response) => {
   // its status to the string 'done'.
 
   const bodyKeys = Object.keys(request.body);
-  bodyKeys.forEach( (key) => {
-    if (key === 'newTodo') {
+  bodyKeys.forEach((key) => {
+    if (key === 'newTodo' && request.body[key] !== '') {
       // Create new todo and add it to the todos array
-    } else if (!isNaN(Integer.parseInt(key))) {
+    } else if (!isNaN(Number.parseInt(key))) {
       // Find the corresponding todo item by id and set its status
       // to the strin 'done'
     }
