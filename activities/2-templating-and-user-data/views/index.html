@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+<!-- You can find more about templating with nunjucks here: https://mozilla.github.io/nunjucks/templating.html -->
+
+{% block content %}
+<a href="/">Home</a>
+<span>&nbsp;</span>
+<a href="/edit">Edit</a>
+
+<h1>{{ applicationName }}</h1>
+
+<table class="table table-striped">
+  <tbody>
+    {% for item in todos %}
+    <tr>
+      <td>{{ item.id }}</td>
+      <td><!-- TODO render the name of the todo item here with nunjucks --></td>
+      <td>&#10004;<!-- TODO right now the check mark is always present, render it only if the item has a status of pending, see the if templating tag --></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<form action="/" method="GET">
+  <input name="filter" type="hidden" value="pending"/>
+  <input class="btn btn-default" type="submit" value="Filter"/>
+</form>
+{% endblock %}

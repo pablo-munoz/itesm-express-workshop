@@ -1,0 +1,21 @@
+{
+  "name": "express_workshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "nunjucks": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "activity_1": "node activities/1-hello-world/app.js",
+    "activity_2": "node activities/2-templating-and-user-data/app.js",
+    "activity_3": "node activities/3-building-an-api/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

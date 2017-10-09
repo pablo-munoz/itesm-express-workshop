@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ applicationName }}</h1>
+
+<form action="/edit" method="POST">
+  <table class="table table-striped">
+    {% for item in todos %}
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>
+        <!-- TODO: Like in index.html display the current item's name -->
+      </td>
+      <td>
+        <!-- TODO: Make it so that the 'checked' attribute appears
+             in this html element if the item has a status equal to
+             the string 'done' -->
+        <input class="form-control"
+               name="{{ item.id }}"
+               type="checkbox"
+               value="done"/>
+      </td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>New</td>
+      <td>
+        <input class="form-control"
+               name="newTodo"
+               type="text"
+               value=""/>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+  <input class="btn btn-default" name="" type="submit" value="Submit"/>
+</form>
+{% endblock content %}
